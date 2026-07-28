@@ -175,6 +175,12 @@ if [ "${RUN_METHOD}" = "mpiexec" ] ; then
       fi
     fi
 
+    if [[ ! -z "$DARSHAN_BASE_DIR" ]]; then
+        # FIXME: is it safe to assume CYLC variables are set?
+        export LD_PRELOAD=$DARSHAN_BASE_DIR/lib/libdarshan.so
+        export DARSHAN_LOGFILE=$CYLC_TASK_LOG_DIR/application.darshan
+    fi
+
   elif [ "${SITE_MPI_LAUNCHER_OPTS}" != "" ] ; then
     LAUNCHER_OPTS=${SITE_MPI_LAUNCHER_OPTS}
   else
