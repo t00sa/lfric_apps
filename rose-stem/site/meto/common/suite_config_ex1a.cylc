@@ -78,7 +78,6 @@
 {% endif %}
             TARGET_PLATFORM = 'meto-ex1a'
             RUN_METHOD = 'mpiexec'
-            DARSHAN_LOG_DIR_PATH = '/home/users/sam.clarke/Output'
 
     [[EX1A_GNU]]
         [[[environment]]]
